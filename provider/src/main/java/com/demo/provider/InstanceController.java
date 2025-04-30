@@ -12,7 +12,7 @@ public class InstanceController {
 
 
     private final String instanceId = java.util.UUID.randomUUID().toString();
-
+ //we need to consume this with restclients, provide methods need to consume by consumer thru restclients
     @GetMapping("/instance-info")
     public String getInstanceInfo(){
         System.out.println("Request received at instance running on port: "+ port);
