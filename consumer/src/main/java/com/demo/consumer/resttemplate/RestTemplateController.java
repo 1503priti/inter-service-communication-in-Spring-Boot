@@ -9,10 +9,17 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/api/rest-template")
 public class RestTemplateController {
 
+    private final RestTemplateClient restTemplateClient;
+
+    public RestTemplateController(RestTemplateClient restTemplateClient) {
+        this.restTemplateClient = restTemplateClient;
+    }
+
     @GetMapping("/instance")
     public String getInstance(){
-        RestTemplate restTemplate = new RestTemplate();
-        //http://localhost:8081/instance-info
+        /*RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject("http://localhost:8081/instance-info", String.class);
+    */
+        return restTemplateClient.getInstanceInfo();
     }
 }
