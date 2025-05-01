@@ -17,7 +17,6 @@ public class RestClientController {
     @GetMapping("/instance")
     public String getInstance() {
         RestClient restClient = RestClient.create();
-
         /*return restClient.get()
                 .uri("http://localhost:8081/instance-info")
                 .retrieve()
